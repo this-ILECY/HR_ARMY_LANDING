@@ -1,0 +1,9 @@
+.Landing {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(1fr, 3);
+
+  .view{
+    height: 100vh;
+  }
+}
