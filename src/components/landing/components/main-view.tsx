@@ -19,9 +19,9 @@ const MainView: React.FC = () => {
                 </span>
             </span>
             <span className="bottom">
-                <span className="item item-left">item-left</span>
-                <span className="item item-middle">item-middle</span>
-                <span className="item item-right">item-right</span>
+                <span className="item item-left">قهرمانهای ارتش</span>
+                <span className="item item-middle">مدالها و افتخارات</span>
+                <span className="item item-right">نشان های ارتش</span>
             </span>
         </span>
     )

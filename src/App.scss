@@ -17,9 +17,11 @@
       background-image: url(./assets/img/main-view-bg.jpg);
       background-size: cover;
       background-position: center;
+      gap: $page-padding;
 
       .top {
         height: 100%;
+        padding: 1rem;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -75,8 +77,42 @@
         }
       }
 
-      .bottom{
-        
+      .bottom {
+        height: 100%;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 1fr;
+
+        .item {
+          display: flex;
+          flex-direction: row;
+          background-size: cover;
+          background-position: center;
+          align-items: flex-end;
+          justify-content: flex-end;
+          padding: $page-padding;
+          font-weight: 900;
+          font-size: xx-large;
+          color: white;
+          cursor: pointer;
+          transition: 200ms all cubic-bezier(0.075, 0.82, 0.165, 1);
+
+          &:hover{
+            filter: brightness(1.2);
+          }
+
+          &.item-right {
+            background-image: url('./assets/img/heroes.jpg');
+          }
+
+          &.item-middle {
+            background-image: url('./assets/img/medals.jpg');
+          }
+
+          &.item-left {
+            background-image: url('./assets/img/neshans.jpg');
+          }
+        }
       }
     }
   }
