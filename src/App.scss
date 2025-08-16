@@ -1,9 +1,83 @@
+@import './assets/variables.scss';
+
 .Landing {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: repeat(1fr, 3);
 
-  .view{
-    height: 100vh;
+  .view {
+    height: calc(100vh - $page-padding);
+
+    &.main {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: 2fr 1fr;
+      justify-content: space-between;
+      align-items: center;
+      background-image: url(./assets/img/main-view-bg.jpg);
+      background-size: cover;
+      background-position: center;
+
+      .top {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+
+        .actions {
+          width: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: flex-end;
+          gap: $sm-gap;
+        }
+
+        .title-logo {
+          width: 100%;
+          display: grid;
+          grid-auto-rows: 1fr;
+          grid-template-columns: fit-content(0px) 1fr;
+          gap: $sm-gap;
+
+          .title {
+            display: flex;
+            flex-direction: column;
+            gap: $sm-gap;
+
+            .pre-title {
+              font-weight: 900;
+              font-size: x-large;
+              color: white;
+            }
+
+            .main-title {
+              font-weight: 900;
+              font-size: 3.5rem;
+              color: white;
+
+              .first {
+                color: $red;
+              }
+
+              .last {
+                color: $green;
+              }
+            }
+          }
+
+          .logo {
+            aspect-ratio: 1/1;
+            background: url('./assets/img/army-logo.png');
+            background-position: center;
+            background-size: cover;
+          }
+        }
+      }
+
+      .bottom{
+        
+      }
+    }
   }
 }

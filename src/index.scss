@@ -1,6 +1,8 @@
-@import './fonts.scss';
+@import './assets/variables.scss';
 
 body {
+  direction: rtl;
   margin: 0;
   font-family: iransans;
-} 
+  // padding: $page-padding;
+}
