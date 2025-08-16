@@ -1,7 +1,9 @@
 const ResumeEntrance: React.FC = () => {
     return (
         <span className="view resume-entrance">
-            <span>resume</span>
+            <span className="button-inside">
+                <button>ورود به سامانه رزومه ارتش</button>
+            </span>
         </span>
     )
 
