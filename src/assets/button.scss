@@ -2,4 +2,16 @@
 
 button {
     border: unset;
+    background-color: $primary-color;
+    color: black;
+    font-weight: 300;
+    font-size: large;
+    font-family: iransans;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+
+    &:hover {
+        filter: brightness(1.2);
+    }
 }

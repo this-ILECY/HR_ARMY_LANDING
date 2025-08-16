@@ -3,10 +3,11 @@ const MainView: React.FC = () => {
         <span className="view main">
             <span className="top">
                 <span className="actions">
-                    <button>action1</button>
-                    <button>action2</button>
+                    <button>ورود به سامانه رزومه</button>
+                    <button>درخواست همکاری</button>
                 </span>
                 <span className="title-logo">
+                    <span className="blur-gradient"></span>
                     <span className="logo"></span>
                     <span className="title">
                         <span className="pre-title">معاونت نیروی انسانی</span>
