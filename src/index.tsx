@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './assets/button.scss';
-import './assets/fonts.scss';
+import './assets/style/button.scss';
+import './assets/style/fonts.scss';
 import './index.scss';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
