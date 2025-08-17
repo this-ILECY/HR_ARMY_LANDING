@@ -282,6 +282,89 @@ section {
     }
   }
 
+  .emp-content {
+    display: flex;
+
+    flex-direction: column;
+    align-items: center;
+    gap: $sm-gap;
+    padding: $page-padding;
+
+    .menu-container {
+      position: absolute;
+      top: calc(100% - 10px);
+      width: calc(100%);
+      // padding: $page-padding;
+      box-shadow: 0px 3px 5px 1px #00000030;
+      border-radius: 12px;
+      background: white;
+      display: none;
+
+      &.show {
+        display: flex;
+      }
+
+
+      .menu {
+        display: flex;
+        flex-direction: column;
+        gap: $sm-gap;
+
+        .category {
+          display: flex;
+          padding: 12px;
+          flex-direction: column;
+          gap: $sm-gap;
+
+          .cat-name {
+            font-weight: 500;
+            font-size: small;
+            color: gray;
+          }
+
+          .children {
+            display: flex;
+            flex-wrap: wrap;
+            gap: $sm-gap;
+          }
+        }
+      }
+    }
+
+    .header {
+      position: relative;
+      width: 70%;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+
+      .army-logo {
+        border-radius: 9999999px;
+        background-image: url('./assets/img/army-logo.png');
+        background-position: center;
+        background-size: cover;
+        height: 48px;
+        aspect-ratio: 1/1;
+      }
+
+      .menu-button {
+        font-weight: 500;
+      }
+
+
+
+      .iran-flag {
+        border-radius: 9999999px;
+        background-image: url('./assets/img/iran-flag.png');
+        background-position: center;
+        background-size: cover;
+        height: 48px;
+        aspect-ratio: 1/1;
+      }
+    }
+  }
+
   .footer {
     gap: $sm-gap;
     display: flex;
