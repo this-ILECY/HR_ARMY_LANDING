@@ -1,9 +1,225 @@
+@import './assets/variables.scss';
+
 .Landing {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: repeat(1fr, 3);
+  grid-template-rows: repeat(3, 1fr);
 
-  .view{
-    height: 100vh;
+  .view {
+    height: calc(100vh);
+
+    &.main {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: 2fr 1fr;
+      justify-content: space-between;
+      align-items: center;
+      background-image: url(./assets/img/main-view-bg.jpg);
+      background-size: cover;
+      background-position: center;
+
+      .top {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+
+        .actions {
+          width: calc(100% - $page-padding*2);
+          display: flex;
+          align-items: center;
+          justify-content: flex-end;
+          gap: $sm-gap;
+          padding: $page-padding;
+        }
+
+        .title-logo {
+          position: relative;
+          width: calc(100% - $page-padding*2);
+          display: grid;
+          grid-auto-rows: 1fr;
+          grid-template-columns: fit-content(0px) 1fr;
+          gap: $sm-gap;
+          padding: $page-padding;
+
+          .title {
+            display: flex;
+            flex-direction: column;
+            gap: $sm-gap;
+            z-index: 10;
+
+            .pre-title {
+              font-weight: 900;
+              font-size: x-large;
+              color: white;
+            }
+
+            .main-title {
+              font-weight: 900;
+              font-size: 3.5rem;
+              color: white;
+
+              .first {
+                color: $red;
+              }
+
+              .last {
+                color: $green;
+              }
+            }
+          }
+
+          .logo {
+            z-index: 10;
+            aspect-ratio: 1/1;
+            background: url('./assets/img/army-logo.png');
+            background-position: center;
+            background-size: cover;
+          }
+        }
+      }
+
+      .bottom {
+        height: 100%;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 1fr;
+
+        .item {
+          display: flex;
+          flex-direction: row;
+          background-size: cover;
+          background-position: center;
+          align-items: flex-end;
+          justify-content: flex-end;
+          padding: $page-padding;
+          font-weight: 900;
+          font-size: xx-large;
+          color: white;
+          cursor: pointer;
+          transition: 200ms all cubic-bezier(0.075, 0.82, 0.165, 1);
+
+          &:hover {
+            filter: brightness(1.2);
+          }
+
+          &.item-right {
+            background-image: url('./assets/img/heroes.jpg');
+          }
+
+          &.item-middle {
+            background-image: url('./assets/img/medals.jpg');
+          }
+
+          &.item-left {
+            background-image: url('./assets/img/neshans.jpg');
+          }
+        }
+      }
+    }
+
+    &.news {
+      gap: $lg-gap;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      justify-content: center;
+
+      .data {
+        display: flex;
+
+        .data-content {
+
+          display: flex;
+          gap: 3rem;
+          width: 70vw;
+
+          .right-panel {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: flex-end;
+
+            .data-text {
+              display: flex;
+              flex-direction: column;
+              gap: $sm-gap;
+
+              .pre-title {
+                font-weight: 200;
+                font-size: medium;
+              }
+
+              .title {
+                font-weight: 700;
+                font-size: x-large;
+              }
+            }
+          }
+
+
+          .data-img {
+            height: 30vh;
+            aspect-ratio: 1/1;
+            background-size: cover;
+            background-position: center;
+            border-radius: 12px;
+          }
+        }
+      }
+
+      .indicator {
+        display: flex;
+        flex-direction: row;
+        gap: calc($page-padding * 3);
+
+        .news-indicator {
+          height: 20px;
+          aspect-ratio: 1/1;
+          border-radius: 99999px;
+          background-color: $primary-color;
+          cursor: pointer;
+          opacity: 0.2;
+
+          &.active {
+            opacity: 1;
+          }
+        }
+
+      }
+    }
+
+    &.resume-entrance {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+
+      .button-inside {
+        width: 70%;
+        display: flex;
+        aspect-ratio: 3/1;
+        align-items: center;
+        border-radius: 12px;
+        background-size: cover;
+        justify-content: center;
+        background-position: center;
+        background-image: url(./assets/img/resume-entrance.png);
+      }
+    }
   }
+}
+
+.blur-gradient {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  backdrop-filter: blur(10px) brightness(0.5);
+  -webkit-backdrop-filter: blur(10px);
+  mask-image: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+  -webkit-mask-image: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+  pointer-events: none;
 }
