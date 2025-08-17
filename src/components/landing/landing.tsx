@@ -8,14 +8,14 @@ const Landing: React.FC = () => {
     const activeId = 0;
     const allProvinces = true;
     const tooltipMapped = [{ title: "hi", value: "bye" }];
-    const mapOnClickHandler = () => {}
-    const onHoverHandler = () => {}
-    const clearTooltipMapped = () => {}
+    const mapOnClickHandler = () => { }
+    const onHoverHandler = () => { }
+    const clearTooltipMapped = () => { }
     return (
         <span className="Landing">
-            <MainView />
-            <News />
-            <ResumeEntrance />
+            <section id="main"><MainView /></section>
+            <section id="news"><News /></section>
+            <section id="emp"><ResumeEntrance /></section>
             {/* <Filoor
                 activeId={activeId}
                 setActiveId={mapOnClickHandler}

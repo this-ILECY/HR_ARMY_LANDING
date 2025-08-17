@@ -2,6 +2,7 @@ import React from 'react';
 import HomeIcon from '../assets/icons/home-icon';
 import NewspaperIcon from '../assets/icons/newspaper-icon';
 import UserGroupIcon from '../assets/icons/user-group-icon';
+import { useNavigate } from 'react-router-dom';
 // import jalaali from 'jalaali-js';
 
 const Footer: React.FC = () => {
@@ -9,18 +10,24 @@ const Footer: React.FC = () => {
     //     const today = new Date();
     //   const { jy } = jalaali.toJalaali(today);
 
+    const navigate = useNavigate();
+
+    const handleClick = (route: string) => {
+        navigate(route);
+    }
+
     return (
         <span className="footer">
             <span className="links">
-                <button className="link home">
+                <button onClick={() => { handleClick("/home#main") }} className="link home">
                     <HomeIcon />
                     <span className="text">صفحه اصلی</span>
                 </button>
-                <button className="link news">
+                <button onClick={() => { handleClick("/home#news") }} className="link news">
                     <NewspaperIcon />
                     <span className="text">اخبار و تازه ها</span>
                 </button>
-                <button className="link employment">
+                <button  onClick={() => { handleClick("/home#emp") }} className="link employment">
                     <UserGroupIcon />
                     <span className="text">درخواست همکاری</span>
                 </button>

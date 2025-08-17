@@ -1,5 +1,9 @@
 @import './assets/style/variables.scss';
 
+section {
+  display: contents;
+}
+
 .root-class {
   .Landing {
     display: grid;
@@ -11,55 +15,55 @@
 
       &.main {
         display: grid;
+        align-items: center;
+        background-size: cover;
         grid-template-columns: 1fr;
+        background-position: center;
         grid-template-rows: 2fr 1fr;
         justify-content: space-between;
-        align-items: center;
         background-image: url(./assets/img/main-view-bg.jpg);
-        background-size: cover;
-        background-position: center;
 
         .top {
           height: 100%;
           display: flex;
+          align-items: center;
           flex-direction: column;
           justify-content: space-between;
-          align-items: center;
 
           .actions {
-            width: calc(100% - $page-padding*2);
+            gap: $sm-gap;
             display: flex;
             align-items: center;
-            justify-content: flex-end;
-            gap: $sm-gap;
             padding: $page-padding;
+            justify-content: flex-end;
+            width: calc(100% - $page-padding*2);
           }
 
           .title-logo {
-            position: relative;
-            width: calc(100% - $page-padding*2);
-            display: grid;
-            grid-auto-rows: 1fr;
-            grid-template-columns: fit-content(0px) 1fr;
             gap: $sm-gap;
+            display: grid;
+            position: relative;
+            grid-auto-rows: 1fr;
             padding: $page-padding;
+            width: calc(100% - $page-padding*2);
+            grid-template-columns: fit-content(0px) 1fr;
 
             .title {
+              z-index: 10;
+              gap: $sm-gap;
               display: flex;
               flex-direction: column;
-              gap: $sm-gap;
-              z-index: 10;
 
               .pre-title {
+                color: white;
                 font-weight: 900;
                 font-size: x-large;
-                color: white;
               }
 
               .main-title {
+                color: white;
                 font-weight: 900;
                 font-size: 3.5rem;
-                color: white;
 
                 .first {
                   color: $red;
@@ -74,9 +78,9 @@
             .logo {
               z-index: 10;
               aspect-ratio: 1/1;
-              background: url('./assets/img/army-logo.png');
-              background-position: center;
               background-size: cover;
+              background-position: center;
+              background: url('./assets/img/army-logo.png');
             }
           }
         }
@@ -84,21 +88,21 @@
         .bottom {
           height: 100%;
           display: grid;
-          grid-template-columns: repeat(3, 1fr);
           grid-template-rows: 1fr;
+          grid-template-columns: repeat(3, 1fr);
 
           .item {
             display: flex;
-            flex-direction: row;
-            background-size: cover;
-            background-position: center;
-            align-items: flex-end;
-            justify-content: flex-end;
-            padding: $page-padding;
-            font-weight: 900;
-            font-size: xx-large;
             color: white;
             cursor: pointer;
+            font-weight: 900;
+            font-size: xx-large;
+            flex-direction: row;
+            align-items: flex-end;
+            background-size: cover;
+            padding: $page-padding;
+            justify-content: flex-end;
+            background-position: center;
             transition: 200ms all cubic-bezier(0.075, 0.82, 0.165, 1);
 
             &:hover {
@@ -212,33 +216,99 @@
     }
   }
 
-  .footer {
-    display: flex;
-    flex-direction: column;
+  .news-content {
     gap: $sm-gap;
-    padding: $page-padding calc($page-padding * 2);
-    height: fit-content;
+    display: flex;
+    background-size: cover;
+    flex-direction: column;
+    background-position: center;
     align-items: center;
+
+    .img {
+      width: 100%;
+      height: 30vh;
+    }
+
+    .data {
+      width: 70%;
+      gap: $sm-gap;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      justify-content: center;
+
+      .top {
+        width: 100%;
+        display: flex;
+        color: gray;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .pre-title {
+        width: 100%;
+        font-weight: 800;
+        font-size: large;
+      }
+
+      .title {
+        width: 100%;
+        font-weight: 900;
+        font-size: xx-large;
+      }
+
+      .content {
+        text-align: justify;
+        padding-bottom: 5vh;
+      }
+    }
+
+    &.not-found {
+      height: 80vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .title {
+        color: $primary-color;
+        font-size: 10rem;
+        text-align: center;
+      }
+
+      .content {
+        color: gray;
+        font-weight: 900;
+      }
+    }
+  }
+
+  .footer {
+    gap: $sm-gap;
+    display: flex;
+    align-items: center;
+    height: fit-content;
+    flex-direction: column;
     justify-content: center;
+    padding: $page-padding calc($page-padding * 2);
 
     * {
       font-weight: 500;
     }
 
     .links {
-      display: grid;
-      width: 100%;
-      grid-template-columns: repeat(3, 1fr);
-      grid-template-rows: 1fr;
       gap: $sm-gap;
+      width: 100%;
+      display: grid;
+      grid-template-rows: 1fr;
+      grid-template-columns: repeat(3, 1fr);
 
       .link {
         flex-grow: 1;
+        gap: $sm-gap;
         display: flex;
+        padding: 8px 12px;
         align-items: center;
         justify-content: flex-start;
-        padding: 8px 12px;
-        gap: $sm-gap;
 
         .icon {
           height: 24px;
@@ -253,15 +323,15 @@
   }
 
   .blur-gradient {
-    position: absolute;
-    bottom: 0;
     left: 0;
     right: 0;
+    bottom: 0;
     height: 100%;
-    backdrop-filter: blur(10px) brightness(0.5);
+    position: absolute;
+    pointer-events: none;
     -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px) brightness(0.5);
     mask-image: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
     -webkit-mask-image: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
-    pointer-events: none;
   }
 }

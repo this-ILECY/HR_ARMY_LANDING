@@ -2,7 +2,7 @@ import KeyValue from "./KeyValue";
 import { useRef, useState } from "react";
 
 // need tailwind to run the style. but it's working!
-// remove later!
+// remove later! with keyValue;
 
 export type IranMapTooltipMappedType = {
   title: string;
