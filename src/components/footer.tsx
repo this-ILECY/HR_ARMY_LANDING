@@ -12,22 +12,22 @@ const Footer: React.FC = () => {
     return (
         <span className="footer">
             <span className="links">
-                <span className="link home">
+                <button className="link home">
                     <HomeIcon />
                     <span className="text">صفحه اصلی</span>
-                </span>
-                <span className="link news">
-                    <NewspaperIcon/>
+                </button>
+                <button className="link news">
+                    <NewspaperIcon />
                     <span className="text">اخبار و تازه ها</span>
-                </span>
-                <span className="link employment">
-                    <UserGroupIcon/>
+                </button>
+                <button className="link employment">
+                    <UserGroupIcon />
                     <span className="text">درخواست همکاری</span>
-                </span>
+                </button>
             </span>
-            <span className="credit">
+            <button disabled className="credit">
                 تولید شده توسط معاونت نیروی انسانی ستاد ارتش جمهوری اسلامی ایران 1404
-            </span>
+            </button>
         </span>
     )
 

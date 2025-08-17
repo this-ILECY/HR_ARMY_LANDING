@@ -16,7 +16,7 @@ const Landing: React.FC = () => {
             <MainView />
             <News />
             <ResumeEntrance />
-            <Filoor
+            {/* <Filoor
                 activeId={activeId}
                 setActiveId={mapOnClickHandler}
                 tooltipMapped={tooltipMapped}
@@ -24,7 +24,7 @@ const Landing: React.FC = () => {
                 clearTooltipMapped={clearTooltipMapped}
                 className="w-2/3"
                 activeAllProvinces={allProvinces}
-                disable={allProvinces} />
+                disable={allProvinces} /> */}
         </span>
     )
 

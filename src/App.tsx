@@ -5,7 +5,7 @@ import Footer from './components/footer';
 
 function App() {
   return (
-    <span>
+    <span className='root-class'>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Landing />} />
