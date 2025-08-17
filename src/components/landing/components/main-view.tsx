@@ -1,4 +1,13 @@
+import { useNavigate } from "react-router-dom";
+
 const MainView: React.FC = () => {
+
+    const navigate = useNavigate();
+
+    const handleClick = (route: number) => {
+        navigate(`/content/${route}`);
+    }
+
     return (
         <span className="view main">
             <span className="top">
@@ -20,9 +29,9 @@ const MainView: React.FC = () => {
                 </span>
             </span>
             <span className="bottom">
-                <span className="item item-left">قهرمانهای ارتش</span>
-                <span className="item item-middle">مدالها و افتخارات</span>
-                <span className="item item-right">نشان های ارتش</span>
+                <span onClick={() => { handleClick(3) }} className="item item-left">قهرمانهای ارتش</span>
+                <span onClick={() => { handleClick(1) }} className="item item-middle">مدالها و افتخارات</span>
+                <span onClick={() => { handleClick(2) }} className="item item-right">نشان های ارتش</span>
             </span>
         </span>
     )

@@ -1,7 +1,14 @@
 import { useEffect, useState } from "react";
 import { INewsPreview, newsPreview } from "../../../data/news.data";
+import { useNavigate } from "react-router-dom";
 
 const News: React.FC = () => {
+
+    const navigate = useNavigate();
+
+    const handleClick = (id: number) => {
+        navigate(`/content/${id}`);  // Navigate to the target route
+    };
 
     let [selected, setSelected] = useState(0);
 
@@ -23,7 +30,7 @@ const News: React.FC = () => {
                             <div className="title">{data.title}</div>
                             <div className="content">{data.content}</div>
                         </div>
-                        <button>متن کامل خبر</button>
+                        <button onClick={() => { handleClick(data.id) }}>متن کامل خبر</button>
                     </span>
                     <div className="data-img" style={{ backgroundImage: `url(${data.img})` }}></div>
                 </div>
